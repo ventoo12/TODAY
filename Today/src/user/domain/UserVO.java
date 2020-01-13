@@ -2,7 +2,7 @@ package user.domain;
 
 import java.io.Serializable;
 import java.sql.Date;
-
+// DB의 MEMBER 테이블 VO 입니다.
 public class UserVO implements Serializable {
 	
 	private int idx;

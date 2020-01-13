@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import common.controller.AbstractAction;
 import user.login.*;
-
+// 회원가입 페이지
 public class NewUser extends AbstractAction {
 
 	@Override

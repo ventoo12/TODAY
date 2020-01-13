@@ -15,7 +15,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+// Front 컨트롤러입니다. 아래 initParams의 value를 본인 컴퓨터에 있는 Today 프로젝트 로컬 경로 상의 WEB-INF
+// 안의 Command.properties 경로를 입력하여 테스트 시 사용하세요.
 @WebServlet(
 		urlPatterns = { "*.do" }, 
 		initParams = { 
@@ -71,9 +72,9 @@ public class FrontController extends HttpServlet {
 
 	private void process(HttpServletRequest req, HttpServletResponse res) throws ServletException {
 		String path = req.getServletPath();
-		System.out.println("path : "+path);
+		System.out.println("페이지의 path 경로입니다. : "+path);
 		Object obj = cmdMap.get(path);
-		System.out.println("obj : "+obj);
+		System.out.println("페이지의 obj 입니다. : "+obj);
 		if(obj==null) {
 			System.out.println("Action이 null");
 			return;
@@ -102,5 +103,4 @@ public class FrontController extends HttpServlet {
 		}
 		
 	}
-
 }

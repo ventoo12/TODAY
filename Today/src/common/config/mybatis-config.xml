@@ -18,9 +18,11 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		</environment>
 	</environments>
 	<mappers>
-	
 	<!-- 여기에 맵핑을 추가해주세요 =================== -->
 		<mapper resource="user/login/UserMapper.xml"/><!-- 회원가입 맵핑 -->
 		
+		
+		
+	<!-- 여기에 맵핑을 추가해주세요 =================== -->
 	</mappers>
 </configuration>

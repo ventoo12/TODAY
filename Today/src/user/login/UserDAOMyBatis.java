@@ -7,7 +7,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import user.domain.UserVO;
-
+// 회원가입 페이징 처리 DAO 입니다.
 public class UserDAOMyBatis {
 	
 		private final String NS = "user.login.UserMapper";

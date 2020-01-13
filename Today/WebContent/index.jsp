@@ -2,9 +2,10 @@
 	pageEncoding="UTF-8"%>
 	<% String myctx = request.getContextPath();
     %>
-    <!-- 비 로그인시 보여줄 메인 페이지 화면 입니다. -->
+    
+<!-- 비 로그인시 보여줄 메인 페이지 화면 입니다. -->
 <!--  top -->
-<jsp:include page="/top_login.jsp" />
+<jsp:include page="/top_login_X.jsp" />
 <!--  top -->
 <div class="w3-container w3-card w3-white w3-round w3-margin">
 	<br>
@@ -58,5 +59,5 @@
 	</div>
 </div>
 <!--  foot -->
-<jsp:include page="/foot_login.jsp" />
+<jsp:include page="/foot_login_X.jsp" />
 <!--  foot -->

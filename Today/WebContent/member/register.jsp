@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<% String myctx = request.getContextPath();%>
-<jsp:include page="/member/top3.jsp" />
+<jsp:include page="/member/top_reg.jsp" />
 <script type="text/javascript">
 /* 아이디, 닉네임 중복체크를 위해 팝업창을 띄운다*/
 var win = null;
@@ -224,4 +224,4 @@ var check = function(){
 		</div>
 	</div>
 </div>
-<jsp:include page="/member/foot3.jsp" />
+<jsp:include page="/member/foot_reg.jsp" />
