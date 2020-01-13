@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper 
+   namespace="user.login.UserMapper">
+	
+	<!-- 유저 등록 쿼리문 -->
+    <insert id="insertUser" parameterType="user.domain.UserVO">
+    INSERT INTO MEMBER values
+    (MEMBER_SEQ.nextval,#{name},#{nick_name},#{userid},#{pwd},#{email:VARCHAR},#{birth:VARCHAR},
+    #{hp1},#{hp2},#{hp3},#{post},#{addr1},#{addr2:VARCHAR},SYSDATE,1000,0,#{profile:VARCHAR})
+    </insert>
+    
+</mapper>
