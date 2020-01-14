@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 				@WebInitParam(name = "config",
 				value = "본인 Command.properties 경로를 입력해서 테스트해주세요")
 				//진권일 - C:\\Users\\ventoo\\git\\TODAY\\Today\\WebContent\\WEB-INF\\Command.properties
-		})
+		})      // 본인 Command.properties 경로를 입력해서 테스트해주세요
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
