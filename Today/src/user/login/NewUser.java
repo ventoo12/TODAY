@@ -14,7 +14,7 @@ public class NewUser extends AbstractAction {
 		this.setViewPage("member/register.jsp");
 		
 		// 이동방식 forward
-		this.setRedirect(false);
+		this.setRedirect(true);
 		
 	}
 	
