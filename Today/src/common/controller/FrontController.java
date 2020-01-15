@@ -21,9 +21,10 @@ import javax.servlet.http.HttpServletResponse;
 		urlPatterns = { "*.do" }, 
 		initParams = { 
 				@WebInitParam(name = "config",
-				value = "본인 Command.properties 경로를 입력해서 테스트해주세요")
+				value = "본인 Command.properties 파일 경로를 입력하시고 테스트 부탁드립니다.")
 				//진권일 - C:\\Users\\ventoo\\git\\TODAY\\Today\\WebContent\\WEB-INF\\Command.properties
-				//C:\\Users\\2class-019\\git\\TODAY\\Today\\WebContent\\WEB-INF\\Command.properties
+				//류성훈 - C:\\Users\\2class-019\\git\\TODAY\\Today\\WebContent\\WEB-INF\\Command.properties
+				//이수연 - C:\\Users\\2class-014\\git\\TODAY\\Today\\WebContent\\WEB-INF\\Command.properties
 		})      // 본인 Command.properties 경로를 입력해서 테스트해주세요
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
