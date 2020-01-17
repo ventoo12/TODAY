@@ -10,12 +10,12 @@ var flag = false;
 var flag2 = false;
 
 var idCheck=function(){
-	var url="idCheck.jsp";
+	var url="idCheck.do";
 	win=window.open(url,"idCheck","width=460, height=180, left=100, top=100");
 	flag = true; // 아이디 중복체크 버튼을 누르면 true로 변경
 }
 var nickCheck=function(){
-	var url2="nickCheck.jsp";
+	var url2="nickCheck.do";
 	win2=window.open(url2,"nickCheck","width=460, height=180, left=100, top=100");
 	flag2 = true; // 닉네임 중복체크 버튼을 누르면 true로 변경
 }
@@ -34,7 +34,13 @@ var check = function(){
 	}
 	if(!flag2){
 		alert('[필수] 닉네임 중복체크');
-		mf.user// 아직안함!!!!!!!!!!!!!!!!!!!!!!!!!!
+		mf.nick_name.focus();
+		return false;
+	}
+	if(!mf.nick_name.value){
+		alert('[필수] 닉네임 중복체크');
+		mf.nick_name.focus();
+		return false;
 	}
 	// 그외 유효성 체크 : 정규식 이용해서 필터링
 	
@@ -51,7 +57,7 @@ var check = function(){
 						<div class="row">
 							<div class="col-md-12">
 								<form name="mf" role="form" class="form-horizontal" onsubmit="return check()"
-								action="registerEnd.jsp" method="POST" enctype="multipart/form-data">
+								action="registerEnd.do" method="POST" enctype="multipart/form-data">
 									<div class="form-group">
 										<div class="col-sm-2">
 											<label for="name" class="control-label">이름</label>
@@ -67,7 +73,7 @@ var check = function(){
 										</div>
 										<div class="col-sm-3">
 											<input type="text" class="form-control" id="nick_name"
-												placeholder="사용할 닉네임을 입력해주세요" name="nick_name">
+												placeholder="닉네임 중복체크를 해주세요" name="nick_name" readonly>
 										</div>
 										<div class="col-sm-2">
 											<button type="button" onclick="nickCheck()"
@@ -92,7 +98,7 @@ var check = function(){
 										</div>
 										<div class="col-sm-3">
 											<input type="text" class="form-control" id="userid"
-												placeholder="로그인 아이디" name="userid">
+												placeholder="아이디 중복체크를 해주세요" name="userid" readonly>
 										</div>
 										<div class="col-sm-2">
 											<button type="button"  onclick="idCheck()"
