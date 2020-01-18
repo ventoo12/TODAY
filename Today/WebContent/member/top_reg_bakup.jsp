@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<% String myctx = request.getContextPath();
+	    <% String myctx = request.getContextPath();
     %>
-    
 <!DOCTYPE html>
 <html>
 <title>TIS SNS 데모 모델</title>
@@ -13,16 +12,16 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<!-- Custom styles for this template-->
-<link href="css/sb-admin-2.min.css" rel="stylesheet">
+<script type="text/javascript"
+	src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript"
+	src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<link
+	href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+	<link href="<%=myctx%>/css/form1.css" rel="stylesheet" type="text/css">
+ <!-- Custom styles for this template-->
+ <link href="/css/sb-admin-2.min.css" rel="stylesheet">
 
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
@@ -35,12 +34,12 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
       <i class="fa fa-remove"></i>
     </a>
-    <img src="https://modo-phinf.pstatic.net/20200118_27/1579339086038uImXY_PNG/mosaDsfzaf.png?type=w556" style="width:70%;" class="w3-round"><br><br>
+    <img src="https://modo-phinf.pstatic.net/20200102_42/1577941769736ytv5z_PNG/mosaz6XgYJ.png?type=w556" style="width:45%;" class="w3-round"><br><br>
     <h4><b>로그인을 해주세요</b></h4>
   </div>
   <div class="w3-bar-block">
-    <a data-toggle="modal" href="#myModal" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>로그인</a>
-    <a href="<%=myctx%>/register.do" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>회원가입</a>  
+    <a href="index.do" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>로그인</a>
+    <a href="register.do" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>회원가입</a>  
   </div>
   
     <!-- Alert Box -->
@@ -72,7 +71,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
   <!-- Header -->
   <header id="portfolio">
-    <a href="#"><img src="https://modo-phinf.pstatic.net/20200118_27/1579339086038uImXY_PNG/mosaDsfzaf.png?type=w556" style="width:40%;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <a href="#"><img src="https://modo-phinf.pstatic.net/20200102_42/1577941769736ytv5z_PNG/mosaz6XgYJ.png?type=w556" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
     <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
     <div class="w3-container">
     <h1><b>ToDay Now</b></h1>
@@ -85,5 +84,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
     <!-- The Grid -->
     <div class="w3-row">
+      
+      
       <!-- Middle Column -->
       <div class="w3-col m9">

@@ -45,10 +45,10 @@
 							</form>
 							<hr>
 							<div class="text-center">
-								<a class="small" href="<%=myctx%>/member/find.jsp">아이디가 기억나지 않나요?</a>
+								<a class="small" href="find.do">아이디가 기억나지 않나요?</a>
 							</div>
 							<div class="text-center">
-								<a class="small" href="<%=myctx%>/member/register.jsp">무료 회원가입하기!</a>
+								<a class="small" href="register.do">무료 회원가입하기!</a>
 							</div>
 						</div>
 					</div>

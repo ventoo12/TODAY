@@ -1,19 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
       <!-- 메인 컬럼 div 끝 -->
       </div>
       
       <!-- 오른쪽 배너 시작 -->
-      <div class="w3-col m2 hidden-sm hidden-xs">
+      <div class="w3-col m2">
         
         <!-- 오른쪽 배너 div 1 -->
-        <div class="hidden-sm hidden-xs w3-card w3-round w3-white w3-padding-16 w3-center">
+        <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
           <img src="https://modo-phinf.pstatic.net/20200102_22/1577944179008MGII3_GIF/mosaSqPQt1.gif?type=w556" style="width:100%;">
         </div>
         <br>
         <!-- 오른쪽 배너 div 2 -->
-        <div class="hidden-sm hidden-xs w3-card w3-round w3-white w3-padding-16 w3-center">
+        <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
           <img src="https://modo-phinf.pstatic.net/20191030_168/1572415465932AjaBn_GIF/mosad6fBrG.gif?type=w556" style="width:100%;">
         </div>
         <br>
@@ -27,7 +26,7 @@
   <!-- Page Container 끝 -->
   </div>
   <br>
- <%@ include file = "/member/loginModal.jsp" %>
+
   <!-- Footer -->
   <footer class="w3-container w3-padding-32 w3-dark-grey">
   <div class="w3-row-padding">

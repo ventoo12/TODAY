@@ -1,58 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-      <!-- 메인 컬럼 div 끝 -->
-      </div>
-      
-      <!-- 오른쪽 배너 시작 -->
-      <div class="w3-col m2">
-        
-        <!-- 오른쪽 배너 div 1 -->
-        <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
-          <img src="https://modo-phinf.pstatic.net/20200102_22/1577944179008MGII3_GIF/mosaSqPQt1.gif?type=w556" style="width:100%;">
-        </div>
-        <br>
-        <!-- 오른쪽 배너 div 2 -->
-        <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
-          <img src="https://modo-phinf.pstatic.net/20191030_168/1572415465932AjaBn_GIF/mosad6fBrG.gif?type=w556" style="width:100%;">
-        </div>
-        <br>
-        
-      <!-- 오른쪽 베너 끝 -->
-      </div>
-      
-    <!-- 메인 그리드 끝 -->
-    </div>
-    
-  <!-- Page Container 끝 -->
-  </div>
-  <br>
-
-  <!-- Footer -->
-  <footer class="w3-container w3-padding-32 w3-dark-grey">
-  <div class="w3-row-padding">
-    <div class="w3-third">
-      <h3>FOOTER</h3>
-      <p> Made By - TIS Project Group </p>
-    </div>
-  </div>
-  </footer>
-  <div class="w3-black w3-center w3-padding-24">TIS SNS Test Page</div>
-
-<!-- !페이지 시작 div 끝! -->
+<!-- End page content -->
 </div>
+<%@ include file = "/member/loginModal.jsp" %>
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>TIS 팀 프로젝트 TODAY</p>
+</footer>
 
-<!-- 아코디언, 사이드바 액션 코드 -->
 <script>
-// Script to open and close sidebar
-function w3_open() {
-    document.getElementById("mySidebar").style.display = "block";
-    document.getElementById("myOverlay").style.display = "block";
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
 }
- 
-function w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-    document.getElementById("myOverlay").style.display = "none";
-}
+document.getElementById("myLink").click();
 </script>
 
 </body>
