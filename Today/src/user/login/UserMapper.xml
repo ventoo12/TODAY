@@ -18,5 +18,9 @@
 	<select id="nick" resultType="int" parameterType="String">
 		SELECT IDX FROM MEMBER WHERE NICK_NAME = #{nick_name}
 	</select>
+	
+	<select id="selectUser" resultType="User" parameterType="String">
+	    SELECT * FROM MEMBER WHERE USERID = #{userid}
+	</select>
 
 </mapper>

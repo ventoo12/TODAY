@@ -23,7 +23,7 @@
 							<div class="text-center">
 								<h1 class="h4 text-gray-900 mb-8">로그인</h1>
 							</div>
-							<form class="user">
+							<form class="user" action="login.do" method=POST>
 								<div class="form-group">
 									<input type="text" class="form-control form-control-user"
 										id="userid" name="userid"
@@ -40,8 +40,8 @@
 											for="customCheck">아이디 기억하기</label>
 									</div>
 								</div>
-								<a href="<%=myctx%>/member/login.jsp" class="btn btn-primary btn-user btn-block">
-									로그인 </a>
+								<button class="btn btn-primary btn-user btn-block">
+									로그인 </button>
 							</form>
 							<hr>
 							<div class="text-center">
