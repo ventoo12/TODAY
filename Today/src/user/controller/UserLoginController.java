@@ -15,12 +15,12 @@ public class UserLoginController extends AbstractAction {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		// 유저 파라미터 값
-		String userid = req.getParameter("userid");// 아이디
-		String pwd = req.getParameter("pwd");// 비밀번호
-		String saveId = req.getParameter("saveId"); // 체크박스 체크여부 체크하면:on, 체크안하면:null 로 들어옴
+		String userid = req.getParameter("userid");
+		String pwd = req.getParameter("pwd");
+		String saveId = req.getParameter("saveId"); // 체크박스 체크여부 아직 안함....
 
 		if (userid == null || pwd == null || userid.trim().isEmpty() || pwd.trim().isEmpty()) {
-			req.setAttribute("msg", "옳지 않은 경로 입니다.");
+			req.setAttribute("msg", "아이디/비밀번호를 입력해주세요");
 			req.setAttribute("loc", "index.do");
 			this.setRedirect(false);
 			this.setViewPage("message.jsp");
@@ -37,8 +37,7 @@ public class UserLoginController extends AbstractAction {
 			this.setViewPage("main.do");
 			this.setRedirect(true);
 		} catch (Exception e) {
-			//System.out.println("여기서 오류남");
-			req.setAttribute("msg", "옳지 않은 경로 입니다.");
+			req.setAttribute("msg", "아이디/비밀번호를 확인해주세요.");
 			req.setAttribute("loc", "index.do");
 			this.setRedirect(false);
 			this.setViewPage("message.jsp");

@@ -46,6 +46,31 @@ var check = function(){
 	
 	return true;
 }
+
+var sel_file;
+
+$(document).ready(function(){
+	$("#file").on("change", handleImgFileSelect);
+});
+
+function handleImgFileSelect(e){
+	var files = e.target.files;
+	var filesArr = Array.prototype.slice.call(files);
+	
+	filesArr.forEach(function(f){
+		if(!f.type.match("image.*")){
+			alert('이미지 파일만 업로드 가능합니다!');
+			return;
+		}
+		sel_file = f;
+		
+		var reader = new FileReader();
+		reader.onload = function(e){
+			$("#img").attr("src", e.target.result);
+		}
+		reader.readAsDataURL(f);
+	});
+}
 </script>
 <div class="w3-container w3-card w3-white w3-round w3-margin">
 	<div class="col-xl-10 col-lg-12 col-md-10">
@@ -89,7 +114,7 @@ var check = function(){
 												권장사이즈 180x180, 240x280 jpg,png,jpeg
 										</div>
 										<div class="col-sm-2">
-											<img src="<%=myctx%>/images/profile1.jpg" class="img-responsive">
+											<img id="img" class="img-responsive">
 										</div>
 									</div>
 									<div class="form-group">

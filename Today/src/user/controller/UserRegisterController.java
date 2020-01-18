@@ -36,7 +36,7 @@ public class UserRegisterController extends AbstractAction {
 		String email = mreq.getParameter("email");
 		String pwd = mreq.getParameter("pwd");
 		String birth = mreq.getParameter("birth");
-		String hp1 = mreq.getParameter("hp1"); // 옵션 스피너, 잘하면 못받을수도....흠
+		String hp1 = mreq.getParameter("hp1");
 		String hp2 = mreq.getParameter("hp2");
 		String hp3 = mreq.getParameter("hp3");
 		String post = mreq.getParameter("post");
@@ -44,8 +44,8 @@ public class UserRegisterController extends AbstractAction {
 		String addr2 = mreq.getParameter("addr2");
 		int mileage = 1000;
 		int m_state = 0;
-		String profile = mreq.getFilesystemName("profile");
-
+		String profile = mreq.getFilesystemName("file");
+		System.out.println("업로드한 파일 : "+profile);
 		File mfile = mreq.getFile("profile"); // 파일이 없으면 null 반환
 
 		// 유효성 체크
@@ -63,7 +63,7 @@ public class UserRegisterController extends AbstractAction {
 
 	
 		String msg = (n > 0) ? "회원가입 완료!" : "가입실패, 내용을 확인하세요";
-		String loc = (n > 0) ? "mian.do" : "javascript:history.back()";
+		String loc = (n > 0) ? "index.do" : "javascript:history.back()";
 
 		req.setAttribute("msg", msg);
 		req.setAttribute("loc", loc);
