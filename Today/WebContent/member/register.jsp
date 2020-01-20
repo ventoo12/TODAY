@@ -110,7 +110,7 @@ function handleImgFileSelect(e){
 											<label for="profile" class="control-label">프로필 사진</label>
 										</div>
 										<div class="col-sm-3">
-											<input type="file" name="file" id="file" class="control-label">30Mb 이하,
+											<input type="file" name="file" id="file" class="control-label">10Mb 이하,
 												권장사이즈 180x180, 240x280 jpg,png,jpeg
 										</div>
 										<div class="col-sm-2">
@@ -208,11 +208,11 @@ function handleImgFileSelect(e){
 											<label for="post" class="control-label">우편번호</label>
 										</div>
 										<div class="col-sm-2">
-											<input type="text" class="form-control" id="post"
-												placeholder="10521" name="post" maxlength="5" required="">
+											<input type="text" class="form-control" id="zonecode"
+												placeholder="10521" name="post" maxlength="5" readonly required>
 										</div>
 										<div class="col-sm-2">
-											<button type="button" onclick="zipCheck()"
+											<button type="button" onclick="openDaumZipAddress();"
 												class="btn btn-danger">우편번호체크</button>
 										</div>
 									</div>
@@ -221,14 +221,15 @@ function handleImgFileSelect(e){
 											<label for="addr" class="control-label">주소</label>
 										</div>
 										<div class="col-sm-3">
-											<input type="text" class="form-control" id="addr1"
-												placeholder="서울특별시 영등포구 당산동" name="addr1">
+											<input type="text" class="form-control" id="address"
+												placeholder="서울특별시 영등포구 당산동" name="addr1" readonly>
 										</div>
 										<div class="col-sm-3">
-											<input type="text" class="form-control" id="addr2"
+											<input type="text" class="form-control" id="address_detail"
 												name="addr2" placeholder="당산 자이아파트 102동 302호">
 										</div>
 									</div>
+									<div id="wrap" style="display:none;border:1px solid #DDDDDD;width:500px;margin-top:5px"></div>
 									<div class="form-group">
 										<div class="col-sm-offset-2 col-sm-10">
 											<div class="col-sm-3">

@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 	<% String myctx = request.getContextPath();
     %>
-    
 <!-- 비 로그인시 보여줄 메인 페이지 화면 입니다. -->
 <!--  top -->
 <jsp:include page="/top_login_X.jsp" />
