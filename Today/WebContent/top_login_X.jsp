@@ -72,7 +72,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
   <!-- Header -->
   <header id="portfolio">
-    <a href="#"><img src="https://modo-phinf.pstatic.net/20200118_27/1579339086038uImXY_PNG/mosaDsfzaf.png?type=w556" style="width:40%;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <a href="#"><img src="https://modo-phinf.pstatic.net/20200118_27/1579339086038uImXY_PNG/mosaDsfzaf.png?type=w556" style="width:30%;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
     <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
     <div class="w3-container">
     <h1><b>ToDay Now</b></h1>

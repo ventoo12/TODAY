@@ -49,10 +49,10 @@ body, html {
       <a data-toggle="modal" href="#myModal" class="w3-button w3-block w3-black">누르면 터짐</a>
     </div>
     <div class="w3-col s3">
-      <a href="#menu" class="w3-button w3-block w3-black">About TODAY</a>
+      <a href="about.do" class="w3-button w3-block w3-black">TODAY 소개</a>
     </div>
     <div class="w3-col s3">
-      <a href="#where" class="w3-button w3-block w3-black">문의</a>
+      <a href="javascript:alert('문의 사절')" class="w3-button w3-block w3-black">문의</a>
     </div>
   </div>
 </div>
