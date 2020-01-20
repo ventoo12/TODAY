@@ -39,9 +39,9 @@ public class UserRegisterController extends AbstractAction {
 		String hp1 = mreq.getParameter("hp1");
 		String hp2 = mreq.getParameter("hp2");
 		String hp3 = mreq.getParameter("hp3");
-		String post = mreq.getParameter("post");
-		String addr1 = mreq.getParameter("addr1");
-		String addr2 = mreq.getParameter("addr2");
+		String post = mreq.getParameter("zonecode");
+		String addr1 = mreq.getParameter("address");
+		String addr2 = mreq.getParameter("address_detail");
 		int mileage = 1000;
 		int m_state = 0;
 		String profile = mreq.getFilesystemName("file");

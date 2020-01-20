@@ -209,7 +209,7 @@ function handleImgFileSelect(e){
 										</div>
 										<div class="col-sm-2">
 											<input type="text" class="form-control" id="zonecode"
-												placeholder="10521" name="post" maxlength="5" readonly required>
+												placeholder="10521" name="zonecode" maxlength="5" readonly required>
 										</div>
 										<div class="col-sm-2">
 											<button type="button" onclick="openDaumZipAddress();"
@@ -222,11 +222,11 @@ function handleImgFileSelect(e){
 										</div>
 										<div class="col-sm-3">
 											<input type="text" class="form-control" id="address"
-												placeholder="서울특별시 영등포구 당산동" name="addr1" readonly>
+												placeholder="서울특별시 영등포구 당산동" name="address" readonly>
 										</div>
 										<div class="col-sm-3">
 											<input type="text" class="form-control" id="address_detail"
-												name="addr2" placeholder="당산 자이아파트 102동 302호">
+												name="address_detail" placeholder="당산 자이아파트 102동 302호">
 										</div>
 									</div>
 									<div id="wrap" style="display:none;border:1px solid #DDDDDD;width:500px;margin-top:5px"></div>
