@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 		urlPatterns = { "*.do" }, 
 		initParams = { 
 				@WebInitParam(name = "config",
-				value = "C:\\Users\\2class-014\\git\\TODAY\\Today\\WebContent\\WEB-INF\\Command.properties")
+				value = "C:\\Users\\ventoo\\git\\TODAY\\Today\\WebContent\\WEB-INF\\Command.properties")
 				//진권일 - C:\\Users\\ventoo\\git\\TODAY\\Today\\WebContent\\WEB-INF\\Command.properties
 				//류성훈 - C:\\Users\\2class-019\\git\\TODAY\\Today\\WebContent\\WEB-INF\\Command.properties
 				//이수연 - C:\\Users\\2class-014\\git\\TODAY\\Today\\WebContent\\WEB-INF\\Command.properties
