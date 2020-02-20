@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board.controller.mapper">
+	
+	 <!-- 게시판 글쓰기 #{name} : BoardVO객체의 getName()을 불러 출력함
+       널값이 들어올 프로퍼티에는 jdbcType을 기술해야 함
+       #{content:VARCHAR}
+      
+       추후에 alias 줄 예정 
+    -->
+  	<insert id="insertToday" parameterType="board.domain.TodayVO">							
+   		insert into board1 values (board1_seq.nextval,#{addr},#{title},#{content},#{author},systimestamp)											
+   	</insert>
+   
+   	<select id="list" parameterType="String" resultType="board.domain.TodayVO">
+		select * from board1 where author=#{author} order by boardnum
+	</select>
+	
+	<select id="total" parameterType="String" resultType="int">
+		select count(addr) from board1 where author=#{author} 
+	</select>
+	
+	<select id="getOne" parameterType="String" resultType="board.domain.TodayVO">
+		select * from board1 where boardnum=#{boardnum} 
+	</select>
+	
+	 <select id="getReply" parameterType="String" resultType="board.domain.replyVO">
+		select * from reply where board_num =#{boardnum} order by reply_num 
+	</select>
+	
+	<update id="updateToday" parameterType="board.domain.TodayVO">							
+   		update board1 set content=#{content}, wdate=sysdate 
+   		<if test="addr !=null">
+   		, addr=#{addr}
+   		</if>
+   		where boardnum=#{boardnum}						
+   	</update>
+   	
+   	<insert id="writeReply" parameterType="board.domain.TodayVO">							
+   		insert into reply values (reply_seq.nextval, #{board_num}, #{content}, #{author}, sysdate)		
+   	</insert>
+   	
+   	<select id="delete" parameterType="string">
+		delete from board1 where boardnum=#{boardnum}
+	</select>
+	
+	<select id="deleteReply" parameterType="string">							
+   		delete from reply where reply_num=#{reply_num}
+   	</select>
+   	
+  
+   
+
+   
+  
+</mapper>
