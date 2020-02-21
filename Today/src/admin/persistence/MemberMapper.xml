@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="admin.persistence.MemberMapper">
+	
+   <sql id="whereClause">
+   		<if test="findType !=null and findKeyword !=''">
+   			<where>
+   				<choose>
+   					<when test="findType==1">
+   						name like '%'||#{findKeyword}||'%'
+   					</when>
+   					<when test="findType==2">
+   						userid  like '%'||#{findKeyword}||'%'
+   					</when>
+   					<when test="findType==3">
+   					    email like '%'||#{findKeyword}||'%'
+   					</when>
+   				</choose>
+   			</where>
+   		</if>
+   </sql>
+   
+   <select  id="listMember_test" resultType="User" parameterType="map">
+	select idx,userid,name, pwd from member
+   </select>
+   
+   <!-- 게시목록(페이징 처리 포함) -->
+   <select id="listMember" resultType="User" parameterType="map">
+   select * from(
+	select row_number() over(order by idx asc) rn, member.*
+	from member 
+	<include refid="whereClause"/>
+	 ) where rn between #{start} and #{end} order by idx asc
+   </select>
+   
+   <!--  select count(idx) from board [where subject like '%'||#{findKeyword}||'%']-->
+  <!--  <include refid="whereClause"/> -->
+   <select id="totalCount" resultType="int" parameterType="hashmap">
+   		select count(idx) from member
+   </select>
+   
+   <update id="updateState" parameterType="User">
+   		update board set m_state=#{m_state} where idx=#{idx}
+   </update>
+   
+</mapper>

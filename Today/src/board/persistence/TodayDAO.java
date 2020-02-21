@@ -15,7 +15,7 @@ import board.domain.TodayVO;
 import board.domain.replyVO;
 
 public class TodayDAO {
-		private final String NS ="board.controller.mapper";
+		private final String NS ="board.persistence.mapper";
 		private SqlSession ses;
 		public SqlSessionFactory getSessionFactory() {
 			SqlSessionFactoryBuilder builder=null;

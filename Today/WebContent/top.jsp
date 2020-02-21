@@ -41,13 +41,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <div class="w3-card w3-round w3-white">
       <div class="w3-container">
        <h4 class="w3-center" style="padding-top:20px">${loginUser.nick_name}</h4>
-       <p class="w3-center"><img src="https://modo-phinf.pstatic.net/20191022_222/1571728404039L1qvj_JPEG/mosaPSIdp9.jpeg?type=w556" class="w3-circle" style="height:106px;width:106px" alt="Avatar">
+       <p class="w3-center"><img src="<%=myctx%>/images/${loginUser.profile}" class="w3-circle" style="height:106px;width:106px" alt="Avatar">
        </p>
        	<p class="w3-center"><a href="<%=myctx%>/profile/profileEdit.do" >설정</a></p>
        <hr>
-       <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> 안녕하세요 김펭귄 입니다.</p>
-       <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> 남극</p>
-       <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> 2020년 1월 2일</p>
+       <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> ${loginUser.nick_name}님 환영합니다.</p>
+       <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> ${loginUser.addr1}</p>
+       <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> ${loginUser.birth}</p>
       </div>
     </div>
     <!-- 프로필 div 끝 -->
@@ -76,9 +76,12 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
   <div class="w3-bar-block">
     <a href="<%=myctx%>/list.do" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>내 게시판</a> 
     <a href="<%=myctx%>/first.do" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>게시물 업로드</a> 
+    <c:if test="${loginUser.m_state eq 99}"><!-- 회원상태가 관리자일 경우 -->
+    <a href="<%=myctx%>/userList.do" onclick="w3_close()" class="w3-bar-item w3-button w3-padding" style="color:red"><i class="fa fa-user fa-fw w3-margin-right" style="color:red"></i>관리자페이지</a>
+    </c:if>
     <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>내정보</a> 
     <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>쪽지함</a>
-    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>로그아웃</a>
+    <a href="<%=myctx%>/logout.do" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>로그아웃</a>
   </div>
     <!-- 사이드바 메뉴 끝 -->
     
@@ -111,18 +114,18 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
   <!-- Header -->
   <header id="portfolio">
-    <a href="#"><img src="https://modo-phinf.pstatic.net/20191022_222/1571728404039L1qvj_JPEG/mosaPSIdp9.jpeg?type=w556" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <a href="#"><img src="<%=myctx%>/images/${loginUser.profile}" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
     <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
     <div class="w3-container" align="center">
-    <img src="images/logo.png" style="width: 250px;height: 150px;padding-top:20px">
+    <img src="<%=myctx%>/images/logo.png" style="width: 250px;height: 150px;padding-top:20px">
     <!-- <h1><b>ToDay Now</b></h1> -->
     <div class="w3-section w3-bottombar w3-padding-16">
       <span class="w3-margin-right">메뉴 : </span> 
       <button class="w3-button w3-black" onclick="go(1)"><i class="fa fa-1x fa-fw fa-home"></i>Home</a></button>
-      <button class="w3-button w3-white"><i class="fa fa-diamond w3-margin-right"></i>자유 게시판</button>
-      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-photo w3-margin-right"></i>포인트 샵</button>
-      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i> 영화</button>
-      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i> 지도</button>
+      <button class="w3-button w3-white" onclick="javascript:location.href='/Today/list.do'"><i class="fa fa-diamond w3-margin-right"></i>자유 게시판</button>
+      <!-- <button class="w3-button w3-white w3-hide-small"><i class="fa fa-photo w3-margin-right"></i>포인트 샵</button> -->
+      <button class="w3-button w3-white w3-hide-small" onclick="javascript:location.href='/Today/moviemain.do'"><i class="fa fa-map-pin w3-margin-right"></i> 영화</button>
+     <!-- <button class="w3-button w3-white w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i> 지도</button> -->
       <button class="w3-button w3-white w3-hide-small"  onclick="go(4)"><i class="fa fa-map-pin w3-margin-right"></i>소모임</button>
     </div>
     </div>

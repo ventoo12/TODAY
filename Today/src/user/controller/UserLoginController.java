@@ -6,7 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import common.controller.AbstractAction;
 import user.domain.UserVO;
-import user.login.UserDAOMyBatis;
+import user.persistence.UserDAOMyBatis;
 
 // 로그인 인증 후 로그인 메인페이지로 이동하는 컨트롤러 입니다.
 // 아직 설정이 덜 끝났습니다.

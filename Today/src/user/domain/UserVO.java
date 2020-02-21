@@ -22,13 +22,14 @@ public class UserVO implements Serializable {
 	private int mileage;
 	private int m_state;
 	private String profile;
+	private int rn;
 	
 	public UserVO() {
 		
 	}
 
 	public UserVO(int idx, String name, String nick_name, String userid, String email, String pwd, String birth, String hp1, String hp2, String hp3,
-			String post, String addr1, String addr2, Date indate, int mileage, int m_state, String profile) {
+			String post, String addr1, String addr2, Date indate, int mileage, int m_state, String profile, int rn) {
 		super();
 		this.idx = idx;
 		this.name = name;
@@ -47,8 +48,17 @@ public class UserVO implements Serializable {
 		this.mileage = mileage;
 		this.m_state = m_state;
 		this.profile = profile;
+		this.rn = rn;
 	} // 기본 생성자 생성 -> Source -> 제너레이터 컨스트럭터 using 필드
 
+	
+	public int getRn() {
+		return rn;
+	}
+	
+	public void setRn(int rn) {
+		this.rn = rn;
+	}
 	
 	// 휴대폰 번호 결합
 	public String getAllHp() {

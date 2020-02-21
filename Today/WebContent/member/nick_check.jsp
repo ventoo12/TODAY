@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@page import="user.login.*" %>
+	<%@page import="user.persistence.*" %>
 <%
 	String myctx = request.getContextPath();
 %>
@@ -27,8 +27,8 @@ $(function(){
 <body>
 	<%
 		String method = request.getMethod();
-		switch (method) {
-		case "GET": {
+			switch (method) {
+			case "GET": {
 	%>
 	<div class="container">
 		<div class="row" style="margin-top: 30px">
@@ -46,20 +46,20 @@ $(function(){
 	</div>
 	<%
 		}
-			break;
-		case "POST": {
-				String nick_name = request.getParameter("nick_name");
-		if(nick_name==null||nick_name.trim().isEmpty()){
-			%>
+		break;
+			case "POST": {
+			String nick_name = request.getParameter("nick_name");
+			if(nick_name==null||nick_name.trim().isEmpty()){
+	%>
 			<script>
 			alert('닉네임을 입력하세요');
 			history.back();
 			</script>
 			<%
-			return;
-		} // if
-		%>
-		<jsp:useBean id="dao" class="user.login.UserDAOMyBatis" scope="session" />
+				return;
+					} // if
+			%>
+		<jsp:useBean id="dao" class="user.persistence.UserDAOMyBatis" scope="session" />
 		<%
 		boolean canUse = dao.nick_check(nick_name.trim());
 			

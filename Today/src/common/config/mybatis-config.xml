@@ -6,8 +6,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
     <!-- VO Object            별칭 지정 =================== -->
 	<typeAliases>
 	     <typeAlias type="user.domain.UserVO" alias="User"/><!-- 유저VO Aliases = User -->
-	     <!-- 여기에 Aliases를 추가해주세요. -->
-	     
+		<typeAlias type="admin.domain.BoardVO" alias="Board"/>
+	     <typeAlias type="movie.domain.MovieVO" alias="Movie"/>
+	     <typeAlias type="meeting.domain.MeetingVO" alias="Meeting"/><!-- 소모임VO Aliases = Meet -->
 	</typeAliases>
 	<!-- =============================================== -->
 	<environments default="development">
@@ -22,10 +23,12 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	</environments>
 	<mappers>
 	<!-- 여기에 맵핑을 추가해주세요 =================== -->
-		<mapper resource="user/login/UserMapper.xml"/><!-- 회원가입 맵핑 -->
+		<mapper resource="user/persistence/UserMapper.xml"/><!-- 회원가입 맵핑 -->
 		<mapper resource="board/persistence/mapper.xml"/><!-- board 맵핑 -->
-		
-		
+		<mapper resource="admin/persistence/MemberMapper.xml"/><!-- admin 맵핑 -->
+		<mapper resource="admin/persistence/BoardMapper.xml"/><!-- admin 맵핑 -->
+		<mapper resource="meeting/persistence/MeetingMapper.xml"/><!-- 소모임 맵핑 -->
+		<mapper resource="movie/persistence/MovieMapper.xml"/> <!-- 영화 맵핑 -->
 		
 	<!-- 여기에 맵핑을 추가해주세요 =================== -->
 	</mappers>

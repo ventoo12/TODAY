@@ -1,15 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% String myctx = request.getContextPath();%>
-
-
-
 <!-- 메인 컬럼 div 끝 -->
       </div>
       
       <!-- 오른쪽 배너 시작 -->
       <div class="w3-col m3">
-      
       <!-- 오른쪽 배너 div 1 -->
         <div class="w3-card w3-round w3-white w3-center">
           <div class="w3-container">
@@ -17,7 +13,7 @@
             <img src="https://modo-phinf.pstatic.net/20200102_276/1577931462183TlnD0_JPEG/mosaUxGr5H.jpeg?type=w556" alt="Forest" style="width:100%;">
             <p><strong>주말 스터디</strong></p>
             <p>금요일 15:00</p>
-            <p><button class="w3-button w3-block w3-theme-l4"><a href="<%=myctx%>/meeting/meetingList.do">신청하기</a></button></p>
+            <p><button class="w3-button w3-block w3-theme-l4" onclick="location.href='/Today/meeting/meetingList.do'">신청하기</button></p>
           </div>
         </div>
         <br>
@@ -64,14 +60,13 @@
   <!-- Footer -->
   <footer class="w3-container w3-padding-32 w3-dark-grey">
   <div class="w3-row-padding">
-    <div class="w3-third">
-      <h3>FOOTER</h3>
-      <p>빈공간 입니다. 없애도 됩니다.</p>
-      <p>관리,제작 : ??? </p>
+    <div class="w3-third col-md-12" align="center">
+      <img src="<%=myctx%>/images/logo.png" style="width: 80px;height: 40px;align:center;margin:5px" alt="todayLogo">
+      <p>Welcom to TODAY</p>
     </div>
   </div>
   </footer>
-  <div class="w3-black w3-center w3-padding-24">TIS SNS Test Page</div>
+  <div class="w3-black w3-center w3-padding-24">TIS Information Technology Education Center</div>
 
 <!-- !페이지 시작 div 끝! -->
 </div>

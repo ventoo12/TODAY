@@ -1,29 +1,32 @@
 package board.controller;
 
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.File;
-
-import javax.imageio.ImageIO;
-import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
-
 import common.controller.AbstractAction;
-
+import user.domain.UserVO;
 
 public class FirstController extends AbstractAction {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
-	
-			this.setViewPage("board/first.jsp");
+
+		// ==================================================
+		HttpSession session = req.getSession(); // 세션불러오기
+		// 주소로 치고들어올때 빠꾸
+		UserVO user = (UserVO) session.getAttribute("loginUser");
+		if (user == null) {
+			req.setAttribute("msg", "먼저 로그인을 해주세요");
+			req.setAttribute("loc", "index.do");
 			this.setRedirect(false);
+			this.setViewPage("message.jsp");
+			return;
+		}
+		// ===================================================
+
+		this.setViewPage("board/first.jsp");
+		this.setRedirect(false);
 	}
 
 }

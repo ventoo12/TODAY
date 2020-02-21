@@ -10,7 +10,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import common.controller.AbstractAction;
 import user.domain.UserVO;
-import user.login.UserDAOMyBatis;
+import user.persistence.UserDAOMyBatis;
 
 // 회원가입 버튼을 누르면 유효성 , 필터 확인 후 DB에 등록. 후 보여줄 페이지 컨트롤러입니다.
 public class UserRegisterController extends AbstractAction {
@@ -56,7 +56,7 @@ public class UserRegisterController extends AbstractAction {
 		}
 
 		UserVO vo = new UserVO(0, name, nick_name, userid, email, pwd, birth, hp1, hp2, 
-				hp3, post, addr1, addr2, null, mileage, m_state, profile);
+				hp3, post, addr1, addr2, null, mileage, m_state, profile,0);
 
 		UserDAOMyBatis dao = new UserDAOMyBatis();
 		int n = dao.insertUser(vo);

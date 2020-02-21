@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="movie.persistence.MovieMapper">
+
+	
+	<!-- <select id="selectMovie" parameterType="string" resultType="Movie">
+   		select * from MovieList;
+   </select> -->
+   
+   <select id="MovieList" parameterType="string" resultType="Movie">
+   		select * from MovieList
+   </select>
+   
+    <select id="MovieList_New" parameterType="string" resultType="Movie">
+   		select * from MovieList where mspec='new'
+   </select>
+   <select id="MovieList_Hit" parameterType="string" resultType="Movie">
+   		select * from MovieList where mspec='hit'
+   </select>
+   
+   <select id="MovieList_Mileage" parameterType="string" resultType="Movie">
+   		select * from MovieList where mspec='mileage'
+   </select>
+   
+   <select id="ListMovie" parameterType="string" resultType="Movie">
+   		select * from MovieList order by code desc
+   </select>
+   
+   
+ <!--    <select id="selectMovie2" parameterType="string" resultType="Movie">
+   		select * from list2;
+   </select>
+   
+    <select id="selectMovie3" parameterType="string" resultType="Movie">
+   		select * from list3;
+   </select> -->
+  
+</mapper>
